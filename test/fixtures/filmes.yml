@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  genero: MyString
+  avaliacao: 1
+  sinopse: MyText
+  classificacao_etaria: 1
+  diretor: MyString
+  status: MyString
+
+two:
+  titulo: MyString
+  genero: MyString
+  avaliacao: 1
+  sinopse: MyText
+  classificacao_etaria: 1
+  diretor: MyString
+  status: MyString

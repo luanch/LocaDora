@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  filme: one
+  ator: one
+  nota: 1
+
+two:
+  filme: two
+  ator: two
+  nota: 1
