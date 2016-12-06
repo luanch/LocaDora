@@ -46,13 +46,15 @@
     <%= f.text_field :status %>
   </div>
 
-  <%= f.fields_for :elencos do |fe| %>
-
-    <div class="field">
-      <%= fe.label :id_ator %>
-      <%= fe.text_field :ator_id %>
+  <div id="elencos">
+    <%= f.fields_for :elencos do |elenco_fields| %>
+      <%= render partial: "elenco_fields", locals: { f: elenco_fields } %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Adicionar Ator', f, :elencos %>
     </div>
-  <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -4,7 +4,7 @@ class FilmesController < ApplicationController
   # GET /filmes
   # GET /filmes.json
   def index
-    @filmes = Filme.all
+    @filmes = Filme.order(:titulo).page params[:page]
   end
 
   # GET /filmes/1
@@ -71,6 +71,6 @@ class FilmesController < ApplicationController
     def filme_params
       params.require(:filme).permit(:titulo, :genero, :avaliacao, :sinopse,
                                     :classificacao_etaria, :diretor, :status,
-                                    elencos_attributes: [:ator_id])
+                                    elencos_attributes: [:id, :ator_id, :_destroy])
     end
 end

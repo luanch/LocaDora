@@ -5,8 +5,12 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Central point to collect locale data for use in Ruby on Rails.
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
-#A library for generating fake data such as names, addresses, and phone numbers.
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
+# A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker'
+# Dynamic nested forms using jQuery made easy; works with formtastic, simple_form or default forms
+gem 'cocoon'
 # CpfUtils é uma suite de funcionalidades para CPF.
 gem 'cpf_utils'
 # Use sqlite3 as the database for Active Record

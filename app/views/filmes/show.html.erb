@@ -30,6 +30,13 @@
   <%= @filme.diretor %>
 </p>
 
+<div>
+  <strong>Atores:</strong>
+  <% @filme.elencos.each do |elenco| %>
+  <li><%= ator_no_elenco elenco %></li>
+  <% end %>
+</div>
+
 <p>
   <strong>Status:</strong>
   <%= @filme.status %>

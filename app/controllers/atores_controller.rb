@@ -4,7 +4,7 @@ class AtoresController < ApplicationController
   # GET /atores
   # GET /atores.json
   def index
-    @atores = Ator.all
+    @atores = Ator.order(:nome).page params[:page]
   end
 
   # GET /atores/1
