@@ -1,6 +1,6 @@
-<h1>Editing Filme</h1>
-
+<div class="col-md-12">
+  <div class="clearfix"></div>
+  <%= link_to 'Ver Filme', @filme, class: 'link-normal' %>
+  <h1 class="col-md-12">Editando Filme</h1>
+</div>
 <%= render 'form', filme: @filme %>
-
-<%= link_to 'Show', @filme %> |
-<%= link_to 'Back', filmes_path %>

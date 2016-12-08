@@ -1,13 +1,8 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
 html, body{
   	font-family: 'Open Sans', sans-serif;
     font-size: 100%;
-  	 background: #FFF;
+    color: #747474;
+    background: #FFF;
 }
 body a{
 	transition:0.5s all;
@@ -311,10 +306,10 @@ ul.options li a:hover{
 	display: inline-block;
 	text-decoration: none;
 	transition:0.5s all;
-	-webkit-transition:0.5s all
-	-moz-transition:0.5s all
-	-o-transition:0.5s all
-	-ms-transition:0.5s all
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
 }
 .categories-right input[type="submit"]:hover{
 	background:#e74c3c;
@@ -347,7 +342,7 @@ ul.options li a:hover{
 	width:70px;
 	height:12px;
 	display:inline-block;
-	background:url(../images/rate.png) no-repeat 0px -15px;
+	background:image_url('rate.png') no-repeat 0px -15px;
 	margin-top: 0.8em;
 }
 .artical-head a:hover span.rate{
@@ -515,7 +510,7 @@ ul.options li a:hover{
 	width:8px;
 	height:8px;
 	display:inline-block;
-	background:url(../images/arrow.png) no-repeat 0px 0px;
+	background:image_url('arrow.png')no-repeat 0px 0px;
 	margin-right:0.5em;
 }
 .site-map ul li a:hover{
@@ -584,21 +579,7 @@ ul.options li a:hover{
 .footer-bottom-right ul li a:hover{
 	color:#6E6C6C;
 }
-/*-- copy-right --*/
-.copy-right{
-	
-}
-.copy-right p{
-	color:#747474;
-	font-size:0.875em;
-}
-.copy-right p a{
-	color:#e74c3c;
-	text-decoration:none;
-}
-.copy-right p a:hover{
-	color:#747474;
-}
+
 /*-- details --*/
 .c-cate{
 	box-shadow:none;
@@ -623,14 +604,14 @@ ul.options li a:hover{
 }
 .artical-details-info-left{
 	float:left;
-	width:40%;
+	width:50%;
 }
 .artical-details-info-left img{
 	width:100%;
 }
 .artical-details-info-right{
 	float:right;
-	width:58%;
+	width:50%;
 }
 .artical-details-info-left a img{
 	border:1px solid #EEE;
@@ -639,32 +620,11 @@ ul.options li a:hover{
 .artical-details-info{
 	margin-top:1em;
 }
-.artical-details-info-right{
-	
+.artical-details-info-right a img{
+  border:1px solid #EEE;
+  padding:10px;
 }
-.artical-details-info-right h2 a {
-	color: #747474;
-	font-size: 0.8em;
-	text-decoration: none;
-	font-weight: 400;
-	text-transform: uppercase;
-}
-.artical-details-info-right h2 {
-	margin: 0;
-	padding: 0;
-	float: left;
-}
-.artical-details-info-right p{
-	margin: 0;
-	padding: 0.4em 0;
-	font-size: 1em;
-	color: #747474;
-}
-.artical-details-info-right p a {
-	color: #747474;
-	padding: 0 0.4em 0 0;
-	text-decoration: none;
-}
+
 .dicription p{
 	margin: 0;
 	padding: 0.4em 0;
@@ -673,7 +633,15 @@ ul.options li a:hover{
 	line-height:1.7em;
 	margin-bottom:1em;
 }
-a.download{
+
+p{
+    margin: 0;
+    padding: 0.4em 0;
+    font-size: 1em;
+    color: #747474;
+    line-height:1.7em;
+}
+.btn-destaque{
 	display: block;
 	padding:0.5em;
 	background: #747474;
@@ -682,9 +650,12 @@ a.download{
 	font-size:1em;
 	text-align:center;
 	text-transform:uppercase;
+    margin-bottom: 10px;
 }
-a.download:hover{
+.btn-destaque:hover{
 	background: #e74c3c;
+    color: #FFF;
+
 }
 .related-articals h2{
 	border: 1px solid #EEE;
@@ -1004,7 +975,7 @@ a.home:hover{
 		display:block;
 		width:33px;
 		height:31px;
-		background:url(../images/nav-icon.png) no-repeat 0px 0px;
+		background: image_url("nav-icon.png") no-repeat 0px 0px;
 		display:block;
 		position:absolute;
 		right:15px;
@@ -1131,7 +1102,7 @@ a.home:hover{
 		display:block;
 		width:33px;
 		height:31px;
-		background:url(../images/nav-icon.png) no-repeat 0px 0px;
+		background:image_url('nav-icon.png') no-repeat 0px 0px;
 		display:block;
 		position:absolute;
 		right:15px;
@@ -1288,7 +1259,7 @@ a.home:hover{
 		display:block;
 		width:33px;
 		height:31px;
-		background:url(../images/nav-icon.png) no-repeat 0px 0px;
+		background:image_url('nav-icon.png') no-repeat 0px 0px;
 		display:block;
 		position:absolute;
 		right:15px;
@@ -1480,7 +1451,7 @@ a.home:hover{
 		display:block;
 		width:33px;
 		height:31px;
-		background:url(../images/nav-icon.png) no-repeat 0px 0px;
+		background:image_url('nav-icon.png') no-repeat 0px 0px;
 		display:block;
 		position:absolute;
 		right:15px;
@@ -1651,4 +1622,31 @@ a.home:hover{
 	.contact-head span {
 		font-size: 0.875em;
 	}
+}
+.btn-normal{
+  border:1px solid #747474;
+  padding:0.5em 1.2em;
+  font-size:0.8em;
+  text-decoration:none;
+  display:block;
+  color:#747474;
+  background:#FFF;
+  border-radius: 5px;
+  width: 150px;
+}
+.btn-normal:hover{
+  border:1px solid #e74c3c;
+  color:#e74c3c;
+  text-decoration:none;
+}
+
+.link-normal{
+  text-decoration:none;
+  color:#747474;
+  background:#FFF;
+}
+
+.link-normal:hover{
+  border-style: hidden;
+  color:#e74c3c;
 }

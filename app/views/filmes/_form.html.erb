@@ -1,61 +1,52 @@
-<%= form_for(filme) do |f| %>
-  <% if filme.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(filme.errors.count, "error") %> prohibited this filme from being saved:</h2>
+<div class="col-md-12">
+  <%= form_for(filme) do |f| %>
+    <% if filme.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(filme.errors.count, "error") %> prohibited this filme from being saved:</h2>
 
-      <ul>
-      <% filme.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :titulo %>
-    <%= f.text_field :titulo %>
-  </div>
-
-  <div class="field">
-    <%= f.label :genero %>
-    <%= f.text_field :genero %>
-  </div>
-
-  <div class="field">
-    <%= f.label :avaliacao %>
-    <%= f.number_field :avaliacao %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sinopse %>
-    <%= f.text_area :sinopse %>
-  </div>
-
-  <div class="field">
-    <%= f.label :classificacao_etaria %>
-    <%= f.number_field :classificacao_etaria %>
-  </div>
-
-  <div class="field">
-    <%= f.label :diretor %>
-    <%= f.text_field :diretor %>
-  </div>
-
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.text_field :status %>
-  </div>
-
-  <div id="elencos">
-    <%= f.fields_for :elencos do |elenco_fields| %>
-      <%= render partial: "elenco_fields", locals: { f: elenco_fields } %>
+        <ul>
+        <% filme.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
-    <div class="links">
-      <%= link_to_add_association 'Adicionar Ator', f, :elencos %>
-    </div>
-  </div>
+    <div class="col-md-12 artical-details-info-left">
+      <div class="row">
+      <p class="col-md-12"><strong class="col-md-4"><%= f.label :titulo %>: </strong><%= f.text_field :titulo, class: "col-md-8 pull-right" %></p>
+      </div>
+      <div class="row">
+        <p class="col-md-12"><strong class="col-md-4"><%= f.label :diretor %>:</strong><%= f.text_field :diretor, class: "col-md-8 pull-right" %></p>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+      <div class="row">
+        <p class="col-md-12"><strong class="col-md-4"><%= f.label :genero %>: </strong><%= f.text_field :genero, class: "col-md-8 pull-right" %></p>
+      </div>
+
+      <div class="row">
+        <%= f.fields_for :elencos do |elenco_fields| %>
+          <%= render partial: "elenco_fields", locals: { f: elenco_fields } %>
+        <% end %>
+        <div class="links col-md-12">
+          <p class="col-md-2"><%= link_to_add_association 'Adicionar Ator', f, :elencos, class:'col-md-6 btn-normal' %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 artical-details-info-right">
+      <div class="row">
+        <p class="col-md-6"><strong class="col-md-8"><%= f.label :classificacao_etaria %>:</strong> <%= f.number_field :classificacao_etaria, class: "col-md-4" %></p>
+        <p class="col-md-6"><strong class="col-md-6"><%= f.label :status %>:</strong><%= f.text_field :status, class:"col-md-6" %></p>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="col-md-12"><strong><%= f.label :sinopse %>:<br></strong><%= f.text_area :sinopse, cols:"74%", rows:"5" %></p>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="actions col-md-12">
+      <%= f.submit "Atualizar", class: "col-md-2 col-md-offset-5 btn-destaque" %>
+    </div>
+    <div class="clearfix"> </div>
+  <% end %>
+</div>

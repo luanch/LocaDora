@@ -12,66 +12,66 @@
 
   </head>
   <body>
-  <!-- container -->
-  <div class="header">
-    <div class="container">
+    <!-- container -->
+    <div class="header">
+      <div class="container">
+        <!-- header -->
+        <!-- logo -->
+        <div class="logo">
+          <%= link_to(image_tag("logo.png"), filmes_path)%>
+        </div>
+        <!-- logo -->
+        <!-- top-nav -->
+        <div class="top-nav">
+          <span class="menu"> </span>
+          <ul>
+            <li class="active"><%= link_to 'Home', filmes_path %></li>
+            <li><%= link_to 'Atores', atores_path %></li>
+            <li><a href="albums.html">Albums</a></li>
+            <li><a href="404.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <div class="clearfix"> </div>
+          </ul>
+        </div>
+        <div class="clearfix"> </div>
+        <!-- top-nav -->
+        <!-- script-for-menu -->
+        <script>
+            $(document).ready(function(){
+                $("span.menu").click(function(){
+                    $(".top-nav ul").slideToggle(200);
+                });
+            });
+        </script>
+        <!-- script-for-menu -->
+      </div>
       <!-- header -->
-      <!-- logo -->
-      <div class="logo">
-        <%= link_to(image_tag("logo.png"), filmes_path)%>
-      </div>
-      <!-- logo -->
-      <!-- top-nav -->
-      <div class="top-nav">
-        <span class="menu"> </span>
-        <ul>
-          <li class="active"><%= link_to 'Home', filmes_path %></li>
-          <li><%= link_to 'Atores', atores_path %></li>
-          <li><a href="albums.html">Albums</a></li>
-          <li><a href="404.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <div class="clearfix"> </div>
-        </ul>
-      </div>
-      <div class="clearfix"> </div>
-      <!-- top-nav -->
-      <!-- script-for-menu -->
-      <script>
-          $(document).ready(function(){
-              $("span.menu").click(function(){
-                  $(".top-nav ul").slideToggle(200);
-              });
-          });
-      </script>
-      <!-- script-for-menu -->
     </div>
-    <!-- header -->
-  </div>
-  <!-- categories -->
-  <div class="categories">
-    <div class="container">
-      <div class="categories-left">
-        <ul class="options">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Adventure</a></li>
-          <li><a href="#">Fantasy</a></li>
-          <li><a href="#">Comedy</a></li>
-          <li><a href="#">Drama</a></li>
-          <li><a href="#">thriller</a></li>
-        </ul>
+    <!-- categories -->
+    <div class="categories">
+      <div class="container">
+        <div class="categories-left">
+          <ul class="options">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Adventure</a></li>
+            <li><a href="#">Fantasy</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Drama</a></li>
+            <li><a href="#">thriller</a></li>
+          </ul>
+        </div>
+        <div class="categories-right">
+          <form>
+            <input type="text" placeholder="Search here" required>
+            <input type="submit" value="search" />
+          </form>
+        </div>
+        <div class="clearfix"> </div>
       </div>
-      <div class="categories-right">
-        <form>
-          <input type="text" placeholder="Search here" required>
-          <input type="submit" value="search" />
-        </form>
-      </div>
-      <div class="clearfix"> </div>
     </div>
-  </div>
-  <!-- categories -->
+    <!-- categories -->
 
-  <%= yield %>
+    <%= yield %>
 
     <!-- footer -->
     <div class="footer">
@@ -115,14 +115,14 @@
               <div class="f-gallery-grids">
                 <div class="f-gallery-grid">
                   <ul>
-                    <li><a href="#"><img src="images/post1.jpg" title="name"></a></li>
-                    <li><a href="#"><img src="images/post2.jpg" title="name"></a></li>
-                    <li><a href="#"><img src="images/post3.jpg" title="name"></a></li>
-                    <li><a href="#"><img src="images/post4.jpg" title="name"></a></li>
-                    <li><a href="#"><img src="images/post5.jpg" title="name"></a></li>
-                    <li><a href="#"><img src="images/post6.jpg" title="name"></a></li>
-                    <div class="clearfix">
-                    </div></ul>
+                    <li><a href="#">IMAGEM</a></li>
+                    <li><a href="#">IMAGEM</a></li>
+                    <li><a href="#">IMAGEM</a></li>
+                    <li><a href="#">IMAGEM</a></li>
+                    <li><a href="#">IMAGEM</a></li>
+                    <li><a href="#">IMAGEM</a></li>
+                    <div class="clearfix"></div>
+                  </ul>
                 </div>
               </div>
             </div>

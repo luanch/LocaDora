@@ -1,46 +1,103 @@
-<p id="notice"><%= notice %></p>
+<div class="content">
+  <div class="container">
+    <!-- content-left -->
+    <div class="col-md-8 content-left">
+      <!-- content-left -->
+        <!-- artical-single-page -->
+        <div class="artical-details">
+          <h2><a href="#"><%= @filme.titulo %></a></h2>
+          <!-- artical-details-info -->
+          <div class="artical-details-info">
+            <div class="artical-details-info-left">
+              <a href="#">IMAGEM</a>
+            </div>
+            <div class="artical-details-info-right">
+              <p><strong>Diretor:</strong><%= @filme.diretor %></p>
+              <p><strong>Gênero:</strong><%= @filme.genero %></p>
+              <p><strong>Atores:</strong> <%= listar_atores @filme.elencos %></p>
+              <p><strong>Classificação Etária:</strong> <%= @filme.classificacao_etaria %></p>
+              <p><strong>Avaliação:</strong> <%= @filme.avaliacao %></p>
+              <p><strong>Status:</strong><%= @filme.status %></p>
+              <div class="dicription">
+                <p><strong>Sinopse:</strong><%= @filme.sinopse %></p>
+              </div>
+              <a class="btn-destaque" href="#">Reservar</a>
+              <%= link_to 'Editar', edit_filme_path(@filme), class: "btn-destaque" %>
+            </div>
+              <div class="clearfix"> </div>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @filme.titulo %>
-</p>
+        </div>
+          <!-- artical-details-info -->
+        </div>
+        <!-- related-articals -->
+        <div class="related-articals">
+          <h2>Related albums</h2>
+          <!-- related-albums -->
+          <div class="related-albums">
+            <script>
+                $(document).ready(function() {
+                    $("#owl-demo1").owlCarousel({
+                        items : 3,
+                        lazyLoad : true,
+                        autoPlay : true,
+                        navigation : true,
+                        navigationText :  false,
+                        pagination : true,
+                    });
+                });
+            </script>
+            <div id="owl-demo1" class="owl-carousel text-center">
+              <div class="item">
+                <div class="r-album">
+                  <div class="r-album-pic">
+                    <a href="#">IMAGEM</a>
+                  </div>
+                  <div class="r-album-info">
+                    <p><strong>Release Date:</strong> March 20, 2014,</p>
+                    <p><strong>Reched:</strong> $250 million,</p>
+                    <p><strong>Genre:</strong> pop,</p>
+                    <p><strong>Country:</strong> UK,</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="r-album">
+                  <div class="r-album-pic">
+                    <a href="#">IMAGEM</a>
+                  </div>
+                  <div class="r-album-info">
+                    <p><strong>Release Date:</strong> March 20, 2014,</p>
+                    <p><strong>Reched:</strong> $250 million,</p>
+                    <p><strong>Genre:</strong> pop,</p>
+                    <p><strong>Country:</strong> UK,</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="r-album">
+                  <div class="r-album-pic">
+                    <a href="#">IMAGEM</a>
+                  </div>
+                  <div class="r-album-info">
+                    <p><strong>Release Date:</strong> March 20, 2014,</p>
+                    <p><strong>Reched:</strong> $250 million,</p>
+                    <p><strong>Genre:</strong> pop,</p>
+                    <p><strong>Country:</strong> UK,</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- related-albums -->
+        </div>
+        <!-- related-articals -->
+        <!-- artical-single-page -->
+        <div class="clearfix"> </div>
+      </div>
+      <!-- content-left -->
 
-<p>
-  <strong>Genero:</strong>
-  <%= @filme.genero %>
-</p>
-
-<p>
-  <strong>Avaliacao:</strong>
-  <%= @filme.avaliacao %>
-</p>
-
-<p>
-  <strong>Sinopse:</strong>
-  <%= @filme.sinopse %>
-</p>
-
-<p>
-  <strong>Classificacao etaria:</strong>
-  <%= @filme.classificacao_etaria %>
-</p>
-
-<p>
-  <strong>Diretor:</strong>
-  <%= @filme.diretor %>
-</p>
-
-<div>
-  <strong>Atores:</strong>
-  <% @filme.elencos.each do |elenco| %>
-  <li><%= ator_no_elenco elenco %></li>
-  <% end %>
+         |
+        <%= link_to 'Back', filmes_path %>
+  </div>
 </div>
-
-<p>
-  <strong>Status:</strong>
-  <%= @filme.status %>
-</p>
-
-<%= link_to 'Edit', edit_filme_path(@filme) %> |
-<%= link_to 'Back', filmes_path %>
+<!-- content -->

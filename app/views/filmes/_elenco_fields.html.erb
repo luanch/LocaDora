@@ -1,7 +1,5 @@
 <div class="nested-fields">
-  <div class="field">
-    <%= f.label :ator_id %>
-    <%= f.text_field :ator_id %>
-    <%= link_to_remove_association('Remover', f)%>
-  </div>
+    <p class="col-md-12"><strong class="col-md-4"><%= f.label :ator_id %></strong>
+    <%= f.text_field :ator_id, class: "col-md-6" %>
+      <%= link_to_remove_association('Remover', f , class: "col-md-2 pull-right") %></p>
 </div>
