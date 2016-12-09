@@ -1,6 +1,9 @@
-<% @sessao_ativa = 3%><h1>Editing Funcionario</h1>
+<% @sessao_ativa = 3%>
 
+<div class="col-md-12">
+  <div class="clearfix"></div>
+  <%= link_to 'Ver Funcionario', @funcionario, class: 'link-normal' %>
+  <h1>Editing Funcionario</h1>
+</div>
 <%= render 'form', funcionario: @funcionario %>
-
-<%= link_to 'Show', @funcionario %> |
-<%= link_to 'Back', funcionarios_path %>
+<%= link_to 'Lista de Funcionarios', funcionarios_path, class: 'link-normal' %>

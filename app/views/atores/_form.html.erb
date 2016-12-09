@@ -1,27 +1,30 @@
-<%= form_for(ator) do |f| %>
-  <% if ator.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(ator.errors.count, "error") %> prohibited this ator from being saved:</h2>
+<div class="col-md-12">
+  <%= form_for(ator) do |f| %>
+    <% if ator.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(ator.errors.count, "error") %> prohibited this ator from being saved:</h2>
 
-      <ul>
-      <% ator.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% ator.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="col-md-8">
+      <div class="row">
+        <p class="col-md-12"><strong class="col-md-4"><%= f.label :nome %>: </strong><%= f.text_field :nome, class: "col-md-8 pull-right" %></p>
+      </div>
+      <div class="row">
+        <p class="col-md-12"><strong class="col-md-4"><%= f.label :sexo %>:</strong><%= f.text_field :sexo, class: "col-md-8 pull-right" %></p>
+      </div>
     </div>
-  <% end %>
+      <div class="clearfix"></div>
+      <div class="actions col-md-12">
+        <%= f.submit "Atualizar", class: "col-md-2 col-md-offset-5 btn-destaque" %>
+      </div>
+      <div class="clearfix" style="margin-bottom: 15px"></div>
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sexo %>
-    <%= f.text_field :sexo %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+</div>

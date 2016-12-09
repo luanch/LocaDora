@@ -1,14 +1,19 @@
 <% @sessao_ativa = 2%><p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @ator.nome %>
-</p>
+<div class="container">
+  <!-- content-left -->
+  <div class="col-md-8 content-left">
+    <!-- content-left -->
+    <!-- artical-single-page -->
+    <div class="artical-details">
 
-<p>
-  <strong>Sexo:</strong>
-  <%= @ator.sexo %>
-</p>
+    <p class="col-md-12"><strong>Diretor:</strong><%= @ator.nome %></p>
+    <p class="col-md-12"><strong>Gênero:</strong><%= @ator.sexo %></p>
 
-<%= link_to 'Edit', edit_ator_path(@ator) %> |
-<%= link_to 'Back', atores_path %>
+      <div class="col-md-12"></div>
+        <%= link_to 'Editar', edit_ator_path(@ator), class: 'link-normal' %> |
+        <%= link_to 'Atores', atores_path, class:'link-normal' %>
+      </div>
+    </div>
+  </div>
+</div>

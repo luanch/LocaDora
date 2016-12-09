@@ -1,33 +1,38 @@
 <% @sessao_ativa = 3%><p id="notice"><%= notice %></p>
+<!-- content -->
+<div class="content">
+  <div class="container">
+    <!-- content-left -->
+    <div class="col-md-12">
+      <h1>Clientes</h1>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-3">Nome</div>
+            <div class="col-md-3">Email</div>
+            <div class="col-md-3">Telefone</div>
+            <div class="clearfix" style="margin-bottom: 10px"></div>
+          </div>
+        </div>
+        <div class="row">
+          <% @clientes.each do |cliente| %>
+              <div class="col-md-12">
+                <div class="col-md-3"><%= cliente.pessoa.nome %></div>
+                <div class="col-md-3"><%= cliente.pessoa.email %></div>
+                <div class="col-md-3"><%= cliente.telefone %></div>
+                <div class="col-md-1"><%= link_to 'Detalhes', cliente %></div>
+                <div class="col-md-1"><%= link_to 'Editar', edit_cliente_path(cliente) %></div>
+                <div class="col-md-1"><%= link_to 'Remover', cliente, method: :delete, data: { confirm: 'Deseja mesmo remover o cliente?' } %></div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+      <br>
+      <div class="clearfix" style="margin-bottom: 10px"></div>
+      <%= link_to 'Novo Cliente', new_cliente_path %>
+    </div>
+  </div>
+</div>
 
-<h1>Clientes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Telefone</th>
-      <th>Endereco</th>
-      <th>Pessoa</th>
-      <th>Email</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @clientes.each do |cliente| %>
-      <tr>
-        <td><%= cliente.telefone %></td>
-        <td><%= cliente.endereco %></td>
-        <td><%= cliente.pessoa.nome %></td>
-        <td><%= cliente.pessoa.email %></td>
-        <td><%= link_to 'Show', cliente %></td>
-        <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Cliente', new_cliente_path %>

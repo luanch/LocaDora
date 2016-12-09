@@ -1,29 +1,36 @@
 <% @sessao_ativa = 2%><p id="notice"><%= notice %></p>
+<!-- content -->
+<div class="content">
+  <div class="container">
+    <!-- content-left -->
+    <div class="col-md-8">
+      <h1>Atores</h1>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-3">Nome</div>
+            <div class="col-md-3">Sexo</div>
+            <div class="clearfix" style="margin-bottom: 10px"></div>
+          </div>
+        </div>
+        <div class="row">
+          <% @atores.each do |ator| %>
+            <div class="col-md-12">
+              <div class="col-md-3"><%= ator.nome %></div>
+              <div class="col-md-3"><%= ator.sexo %></div>
+              <div class="col-md-2"><%= link_to 'Detalhes', ator %></div>
+              <div class="col-md-2"><%= link_to 'Editar', edit_ator_path(ator) %></div>
+              <div class="col-md-2"><%= link_to 'Remover', ator, method: :delete, data: { confirm: 'Deseja mesmo remover o ator?' } %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= paginate @atores, window: 2%>
 
-<h1>Atores</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Sexo</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @atores.each do |ator| %>
-      <tr>
-        <td><%= ator.nome %></td>
-        <td><%= ator.sexo %></td>
-        <td><%= link_to 'Show', ator %></td>
-        <td><%= link_to 'Edit', edit_ator_path(ator) %></td>
-        <td><%= link_to 'Destroy', ator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= paginate @atores, window: 2%>
-
-<br>
-
-<%= link_to 'New Ator', new_ator_path %>
+      <br>
+      <% if current_user(1) == 1%>
+        <%= link_to 'Novo Ator', new_ator_path %>
+      <% end %>
+    </div>
+  </div>
+</div>

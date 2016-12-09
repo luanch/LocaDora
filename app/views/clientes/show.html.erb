@@ -1,24 +1,34 @@
 <% @sessao_ativa = 3%><p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Telefone:</strong>
-  <%= @cliente.telefone %>
-</p>
+<div class="container">
+  <!-- content-left -->
+  <div class="col-md-8 content-left">
+    <!-- content-left -->
+    <!-- artical-single-page -->
+    <div class="artical-details">
+      <p class="col-md-12">
+        <strong>Telefone:</strong>
+        <%= @cliente.telefone %>
+      </p>
 
-<p>
-  <strong>Endereco:</strong>
-  <%= @cliente.endereco %>
-</p>
+      <p class="col-md-12">
+        <strong>Endereco:</strong>
+        <%= @cliente.endereco %>
+      </p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @cliente.pessoa.nome %>
-</p>
+      <p class="col-md-12">
+        <strong>Nome:</strong>
+        <%= @cliente.pessoa.nome %>
+      </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @cliente.pessoa.email %>
-</p>
-
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>
+      <p class="col-md-12">
+        <strong>Email:</strong>
+        <%= @cliente.pessoa.email %>
+      </p>
+      <div class="col-md-12">
+        <%= link_to 'Editar', edit_cliente_path(@cliente), class: 'link-normal' %> |
+        <%= link_to 'Voltar', clientes_path, class: 'link-normal' %>
+      </div>
+    </div>
+  </div>
+</div>

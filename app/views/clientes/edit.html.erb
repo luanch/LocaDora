@@ -1,6 +1,10 @@
-<% @sessao_ativa = 3%><h1>Editing Cliente</h1>
-
+<% @sessao_ativa = 3%>
+<div class="col-md-12">
+  <div class="clearfix"></div>
+    <%= link_to 'Mostrar Cliente', @cliente, class: 'link-normal' %>
+    <h1>Editando Cliente</h1>
+</div>
 <%= render 'form', cliente: @cliente %>
-
-<%= link_to 'Show', @cliente %> |
-<%= link_to 'Back', clientes_path %>
+<% if current_user(1) == 1 %>
+|<%= link_to 'Lista de Clientes', clientes_path, class: 'link-normal' %>
+<% end %>
