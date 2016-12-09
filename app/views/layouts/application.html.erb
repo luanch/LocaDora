@@ -19,17 +19,19 @@
         <!-- logo -->
         <div class="logo">
           <%= link_to(image_tag("logo.png"), filmes_path)%>
+
         </div>
         <!-- logo -->
         <!-- top-nav -->
         <div class="top-nav">
           <span class="menu"> </span>
           <ul>
-            <li class="active"><%= link_to 'Home', filmes_path %></li>
-            <li><%= link_to 'Atores', atores_path %></li>
-            <li><a href="albums.html">Albums</a></li>
-            <li><a href="404.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li <% if @sessao_ativa == 1 %>class="active" <% end %>><%= link_to 'Home', filmes_path %></li>
+            <li <% if @sessao_ativa == 2 %>class="active" <% end %>><%= link_to 'Atores', atores_path %></li>
+            <li <% if @sessao_ativa == 3 %>class="active" <% end %>><%= link_to 'Login', login_path%></li>
+            <% if(logged_in?) %>
+              <li><%= link_to "Logout", logout_path, method: "delete" %></li>
+            <% end %>
             <div class="clearfix"> </div>
           </ul>
         </div>
@@ -58,6 +60,8 @@
             <li><a href="#">Comedy</a></li>
             <li><a href="#">Drama</a></li>
             <li><a href="#">thriller</a></li>
+            <%= "usuario" %>
+            <%= tipo_usuario() %>
           </ul>
         </div>
         <div class="categories-right">

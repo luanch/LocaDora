@@ -16,22 +16,32 @@
     <%= f.text_field :matricula %>
   </div>
 
-    <%= f.fields_for :pessoa do |fp| %>
-        <div class="field">
-          <%= fp.label :nome %>
-          <%= fp.text_field :nome %>
-        </div>
+  <%= f.fields_for :pessoa do |fp| %>
+      <div class="field">
+        <%= fp.label :nome %>
+        <%= fp.text_field :nome %>
+      </div>
 
-        <div class="field">
-          <%= fp.label :cpf %>
-          <%= fp.text_field :cpf %>
-        </div>
+      <div class="field">
+        <%= fp.label :cpf %>
+        <%= fp.text_field :cpf %>
+      </div>
 
-        <div class="field">
-          <%= fp.label :email %>
-          <%= fp.text_field :email %>
-        </div>
-    <% end %>
+      <div class="field">
+        <%= fp.label :email %>
+        <%= fp.email_field :email %>
+      </div>
+
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

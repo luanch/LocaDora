@@ -31,6 +31,7 @@ class FuncionariosController < ApplicationController
       if @funcionario.save
         format.html { redirect_to @funcionario, notice: 'Funcionario was successfully created.' }
         format.json { render :show, status: :created, location: @funcionario }
+        #sign_in(@funcionario)
       else
         format.html { render :new }
         format.json { render json: @funcionario.errors, status: :unprocessable_entity }
@@ -42,7 +43,9 @@ class FuncionariosController < ApplicationController
   # PATCH/PUT /funcionarios/1.json
   def update
     respond_to do |format|
-      if @funcionario.update(funcionario_params)
+      parametros = funcionario_params
+      parametros[:pessoa_attributes].delete("nome") if Pessoa.find(@funcionario.pessoa_id).nome == parametros[:pessoa_attributes][:nome]
+      if @funcionario.update(parametros)
         format.html { redirect_to @funcionario, notice: 'Funcionario was successfully updated.' }
         format.json { render :show, status: :ok, location: @funcionario }
       else
@@ -70,6 +73,7 @@ class FuncionariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def funcionario_params
-      params.require(:funcionario).permit(:matricula, :pessoa[:nome, :cpf, :email])
+      params.require(:funcionario).permit(:matricula, :password, :password_confirmation,
+                                          pessoa_attributes: [:id, :nome, :cpf, :email])
     end
 end

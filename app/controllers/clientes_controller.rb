@@ -42,7 +42,9 @@ class ClientesController < ApplicationController
   # PATCH/PUT /clientes/1.json
   def update
     respond_to do |format|
-      if @cliente.update(cliente_params)
+      parametros = cliente_params
+      parametros[:pessoa_attributes].delete("nome") if Pessoa.find(@cliente.pessoa_id).nome == parametros[:pessoa_attributes][:nome]
+      if @cliente.update(parametros)
         format.html { redirect_to @cliente, notice: 'Cliente was successfully updated.' }
         format.json { render :show, status: :ok, location: @cliente }
       else
@@ -70,6 +72,7 @@ class ClientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cliente_params
-      params.require(:cliente).permit(:telefone, :endereco, pessoa_attributes: [:nome, :cpf, :email])
-     end
+      params.require(:cliente).permit(:telefone, :endereco, :password, :password_confirmation,
+                                      pessoa_attributes: [:id, :nome, :email, :cpf])
+    end
 end

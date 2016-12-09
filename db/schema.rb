@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204133918) do
+ActiveRecord::Schema.define(version: 20161209004231) do
 
   create_table "atores", force: :cascade do |t|
     t.string   "nome"
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(version: 20161204133918) do
     t.string   "telefone"
     t.string   "endereco"
     t.integer  "pessoa_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
     t.index ["pessoa_id"], name: "index_clientes_on_pessoa_id"
   end
 
@@ -62,8 +63,9 @@ ActiveRecord::Schema.define(version: 20161204133918) do
   create_table "funcionarios", force: :cascade do |t|
     t.string   "matricula"
     t.integer  "pessoa_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
     t.index ["pessoa_id"], name: "index_funcionarios_on_pessoa_id"
   end
 

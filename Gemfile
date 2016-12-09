@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Central point to collect locale data for use in Ruby on Rails.
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
+# is a Ruby binding for the OpenBSD bcrypt() password hashing algorithm
+gem 'bcrypt'
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
 gem 'kaminari'
 # A library for generating fake data such as names, addresses, and phone numbers.

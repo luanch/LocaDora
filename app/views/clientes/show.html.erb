@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<% @sessao_ativa = 3%><p id="notice"><%= notice %></p>
 
 <p>
   <strong>Telefone:</strong>
@@ -11,8 +11,13 @@
 </p>
 
 <p>
-  <strong>Pessoa:</strong>
-  <%= @cliente.pessoa %>
+  <strong>Nome:</strong>
+  <%= @cliente.pessoa.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cliente.pessoa.email %>
 </p>
 
 <%= link_to 'Edit', edit_cliente_path(@cliente) %> |

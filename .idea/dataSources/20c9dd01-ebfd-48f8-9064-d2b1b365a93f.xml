@@ -239,90 +239,94 @@
       <DataType>DATETIME(0,-1)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="66" parent="9" name="index_funcionarios_on_pessoa_id">
+    <column id="66" parent="9" name="password_digest">
+      <Position>5</Position>
+      <DataType>VARCHAR(0,-1)|12</DataType>
+    </column>
+    <index id="67" parent="9" name="index_funcionarios_on_pessoa_id">
       <ColNames>pessoa_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="67" parent="9">
+    <key id="68" parent="9">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="68" parent="10" name="id">
+    <column id="69" parent="10" name="id">
       <DataType>INTEGER(0,-1)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="69" parent="10" name="cpf">
+    <column id="70" parent="10" name="cpf">
       <Position>1</Position>
       <DataType>VARCHAR(0,-1)|12</DataType>
     </column>
-    <column id="70" parent="10" name="nome">
+    <column id="71" parent="10" name="nome">
       <Position>2</Position>
       <DataType>VARCHAR(0,-1)|12</DataType>
     </column>
-    <column id="71" parent="10" name="email">
+    <column id="72" parent="10" name="email">
       <Position>3</Position>
       <DataType>VARCHAR(0,-1)|12</DataType>
     </column>
-    <column id="72" parent="10" name="created_at">
+    <column id="73" parent="10" name="created_at">
       <Position>4</Position>
       <DataType>DATETIME(0,-1)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="73" parent="10" name="updated_at">
+    <column id="74" parent="10" name="updated_at">
       <Position>5</Position>
       <DataType>DATETIME(0,-1)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="74" parent="10">
+    <key id="75" parent="10">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="75" parent="11" name="id">
+    <column id="76" parent="11" name="id">
       <DataType>INTEGER(0,-1)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="76" parent="11" name="filme_id">
+    <column id="77" parent="11" name="filme_id">
       <Position>1</Position>
       <DataType>INTEGER(0,-1)|4</DataType>
     </column>
-    <column id="77" parent="11" name="cliente_id">
+    <column id="78" parent="11" name="cliente_id">
       <Position>2</Position>
       <DataType>INTEGER(0,-1)|4</DataType>
     </column>
-    <column id="78" parent="11" name="created_at">
+    <column id="79" parent="11" name="created_at">
       <Position>3</Position>
       <DataType>DATETIME(0,-1)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="79" parent="11" name="updated_at">
+    <column id="80" parent="11" name="updated_at">
       <Position>4</Position>
       <DataType>DATETIME(0,-1)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="80" parent="11" name="index_reservas_on_filme_id">
+    <index id="81" parent="11" name="index_reservas_on_filme_id">
       <ColNames>filme_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="81" parent="11" name="index_reservas_on_cliente_id">
+    <index id="82" parent="11" name="index_reservas_on_cliente_id">
       <ColNames>cliente_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="82" parent="11">
+    <key id="83" parent="11">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="83" parent="12" name="version">
+    <column id="84" parent="12" name="version">
       <DataType>VARCHAR(0,-1)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="84" parent="12">
+    <key id="85" parent="12">
       <ColNames>version</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="85" parent="13" name="name">
+    <column id="86" parent="13" name="name">
       <DataType>(0,-1)|12</DataType>
     </column>
-    <column id="86" parent="13" name="seq">
+    <column id="87" parent="13" name="seq">
       <Position>1</Position>
       <DataType>(0,-1)|12</DataType>
     </column>

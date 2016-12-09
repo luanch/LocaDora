@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<% @sessao_ativa = 3%><p id="notice"><%= notice %></p>
 
 <p>
   <strong>Matricula:</strong>
@@ -7,7 +7,8 @@
 
 <p>
   <strong>Pessoa:</strong>
-  <%= @funcionario.pessoa %>
+  <%= @funcionario.pessoa.nome %>
+  <%= @funcionario.pessoa.email %>
 </p>
 
 <%= link_to 'Edit', edit_funcionario_path(@funcionario) %> |

@@ -12,6 +12,8 @@ puts "Gerando os clientes..."
       cliente: {
           telefone: Faker::PhoneNumber.phone_number,
           endereco: Faker::Address.street_name,
+          password: "senha123",
+          password_confirmation: "senha123",
           pessoa_attributes: {
              nome: Faker::Name.name,
              email: Faker::Internet.email,
@@ -28,6 +30,8 @@ puts "Gerando os Funcionarios..."
   params ={
       funcionario:{
           matricula: Faker::Number.number(3),
+          password: "senha123",
+          password_confirmation: "senha123",
           pessoa_attributes: {
               nome: Faker::Name.name,
               email: Faker::Internet.email,
@@ -71,7 +75,6 @@ puts "Gerando os Atores..."
         { nome: "Meryl Streep", sexo:"feminino"},
         { nome: "Jason Statham", sexo:"masculino"}]
 atores.each do |ator|
-  puts ator
   Ator.create!(ator)
 end
 puts "Gerando os funcionarios... [OK]"
