@@ -24,12 +24,27 @@
               <a class="btn-destaque" href="#">Reservar</a>
               <%= link_to 'Editar', edit_filme_path(@filme), class: "btn-destaque" %>
             </div>
-              <div class="clearfix"> </div>
-
+            <div class="clearfix"> </div>
           </div>
           <!-- artical-details-info -->
       <!-- content-left -->
         </div>
+        <% if current_user 1 %>
+          <%= form_for avaliacao do |f| %>
+              <div class="col-md-12 artical-details-info-left">
+                <div class="row">
+                  <p class="col-md-12"><strong class="col-md-4"><%= f.label :nota %>: </strong><%= f.text_field :nota, class: "col-md-8 pull-right" %></p>
+                </div>
+                <div class="row">
+                  <p class="col-md-12"><strong class="col-md-4"><%= f.label :cliente_id %>:</strong><%= current_user.id %></p>
+                </div>
+                <div class="row">
+                  <p class="col-md-12"><strong class="col-md-4"><%= f.label :genero %>: </strong><%= f.text_field :genero, class: "col-md-8 pull-right" %></p>
+                </div>
+              </div>
+
+    <% end %>
+        <% end %>
         <%= link_to 'Voltar', filmes_path, class: 'link-normal' %>
   </div>
 </div>

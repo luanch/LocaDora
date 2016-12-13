@@ -1,55 +1,52 @@
 <% @sessao_ativa = 1%>
 
-<% @filmes.each do |filme| %>
 
 <!-- content -->
 <div class="content">
   <div class="container">
     <!-- content-left -->
-    <div class="col-md-8 content-left">
-      <div onclick="location.href='details.html';" class="artical">
-        <div class="col-md-4 artical-left">
-          <%= link_to( image_tag("post2.jpg"), filme_path(filme))%>
-        </div>
+
+  <div class="col-md-12 content-left">
+    <% @filmes.each do |filme| %>
+      <div class="artical col-md-5" style="height: 350px; margin: 10px">
         <div class="col-md-8 artical-right">
           <div class="artical-head">
             <h2><%= link_to filme.titulo, filme_path(filme) %></h2>
-            <a href="#"><span class="rate"> </span></a>
-            <div class="clearfix"> </div>
           </div>
           <div class="clearfix"> </div>
           <!-- artical-info -->
           <div class="artical-info">
             <p><strong>Diretor:</strong><%= filme.diretor %></p>
             <p><strong>Genero:</strong><%= filme.genero %></p>
-            <p><strong>Classificação etária:</strong><%= filme.classificacao_etaria %></p>
+            <p><strong>Classificação etária:</strong><%= (filme.classificacao_etaria == 0)  ? 'livre': filme.classificacao_etaria; %></p>
             <p><strong>Atores:</strong> <% filme.elencos.each do |elenco|%>
                   <%=	 Ator.find(elenco.ator_id).nome %>
                   <% end %></p>
-            <p><strong>Status:</strong> <a href="#"><%= filme.status %></p>
+            <p><strong>Status:</strong>Disponível</p>
+            <p><strong>Nota:</strong><%= filme.avaliacao || '-'%></p>
+            <div class="col-md-6" style="margin-top: 20px">
+              <%= link_to 'Detalhes', filme %>
+            </div>
           </div>
           <!-- artical-info -->
         </div>
         <div class="clearfix"> </div>
+
       </div>
       <!-- artical-end -->
-      <% end %>
+    <% end %>
 
-      <div class="clearfix"> </div>
-      <!-- pagenate -->
-      <div class="pagenate">
-        <%=	paginate @filmes  %>
-        <ul>
-          <li class="page-active"><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li class="next"><a href="#">Next</a></li>
-        </ul>
-      </div>
-      <!-- pagenate -->
+    <div class="clearfix"> </div>
+    <!-- pagenate -->
+    <div class="pagenate">
+      <%=	paginate @filmes  %>
     </div>
+    <!-- pagenate -->
+  </div>
     <div class="row">
-      <%= link_to 'New Filme', new_filme_path %>
+      <div class="col-lg-4">
+        <%= link_to 'Novo Filme', new_filme_path %>
+      </div>
     </div>
   </div>
 </div>

@@ -56,8 +56,9 @@ ActiveRecord::Schema.define(version: 20161209004231) do
     t.integer  "classificacao_etaria"
     t.string   "diretor"
     t.string   "status"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "capa",                 limit: 9999
   end
 
   create_table "funcionarios", force: :cascade do |t|
